@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* White background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header, footer {
+            background-color: #3498db; /* Blue color for header and footer */
+            color: #ffffff; /* White text color */
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        #logo {
+            max-width: 30%;
+            height: auto;
+            margin: 0;
+            float: left;
+        }
+
+        h1 {
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2c3e50; /* Darker blue color */
+            color: #ffffff; /* White text color */
+            padding:10px;
+        }
+
+        #eligibilityImage, #documentsImage, #feeStructureImage {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        main h2 {
+            text-align: center;
+        }
+
+        footer p {
+            display: inline-block;
+            margin: 0 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var courseSelect = document.getElementById('course');
+            var feeStructure = document.querySelector('form p');
+
+            courseSelect.addEventListener('change', function () {
+                // Simulate fetching fee structure from the server based on the selected course
+                var selectedCourse = courseSelect.value;
+                var feeDetails = getFeeDetails(selectedCourse);
+                feeStructure.textContent = 'Fee Structure: ' + feeDetails;
+            });
+
+            function getFeeDetails(course) {
+                // Simulated fee details, replace with actual data
+                switch (course) {
+                    case 'engineering':
+                        return 'Engineering Fee: $10,000 per semester';
+                    case 'business':
+                        return 'Business Fee: $8,000 per semester';
+                    case 'medicine':
+                        return 'Medicine Fee: $12,000 per semester';
+                    default:
+                        return 'Fee details not available';
+                }
+            }
+        });
+    </script>
+    <title>SVCE Admissions</title>
+</head>
+<body>
+
+    <header>
+        <img id="logo" src="https://svcengg.edu.in/wp-content/uploads/2022/11/cropped-SVCE1-scaled-1-1.jpg" alt="SVCE Logo">
+        <h1>Welcome to SVCE Admissions</h1>
+        <nav>
+           <button><a href="https://svcengg.edu.in/">Home</a></button>
+           <button><a href="https://svcengg.edu.in/admissions-2023/">Admission</a></button>
+           <button><a href="https://svcengg.edu.in/vision-and-mission/">About us</a></button>
+           <button><a href="https://svcengg.edu.in/admissions-2023/">Instagram</a></button>
+           <button><a href="https://svcengg.edu.in/workshops/">Events</a></button>
+
+        </nav>
+    </header>
+    <main>
+        <h2>Eligibility Criteria</h2>
+        <img id="eligibilityImage" src="https://svcengg.edu.in/wp-content/uploads/2023/07/Screenshot-2023-06-09-1524241111111111111-e1690181661287.jpg" alt="Eligibility Image">
+
+        <h2>Required Documents</h2>
+        <img id="documentsImage" src="https://svcengg.edu.in/wp-content/uploads/2023/07/Required-Documents.png" alt="Required Documents Image">
+
+        <h2>Fee Structure</h2>
+        <img id="feeStructureImage" src="https://svcengg.edu.in/wp-content/uploads/2023/06/Screenshot-2023-06-09-152231.jpg" alt="Fee Structure Image">
+    </main>
+
+    <footer>
+        <p>Contact Us: info@svceadmissions.com</p>
+        <p>Address:Bangalore</p>
+        <p>&copy; 2024 SVCE Admissions. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
